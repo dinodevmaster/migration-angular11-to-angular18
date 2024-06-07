@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { LoginComponent } from 'src/app/commons/components/login/login.component';
+import { LoginComponent } from '@components/login/login.component';
 
 @Component({
 	standalone: true,
