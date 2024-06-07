@@ -2,9 +2,12 @@ import { Component } from '@angular/core';
 import { AbstractControl, UntypedFormControl, UntypedFormGroup, Validators } from '@angular/forms';
 import { IRegister } from './../../models/auth';
 import { customValidator, MODEL_REGISTER_ERRORS } from './model-message-error';
+import { BasicFormModule } from '../../modules/basic-form.module';
 
 @Component({
+	standalone:true,
 	selector: 'app-register',
+	imports: [BasicFormModule],
 	templateUrl: './register.component.html',
 	styleUrls: ['../../scss/auth.component.scss']
 })

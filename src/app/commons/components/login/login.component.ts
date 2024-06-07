@@ -4,8 +4,12 @@ import { Router } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
 import { JwtAuthService } from '../../services/jwt-auth.service';
 import { IRQLogin } from './../../models/auth';
+import { BasicFormModule } from '../../modules/basic-form.module';
+import { CommonModule, JsonPipe, NgIf } from '@angular/common';
 
 @Component({
+	standalone: true,
+	imports: [BasicFormModule, JsonPipe, NgIf],
 	selector: 'app-login',
 	templateUrl: './login.component.html',
 	styleUrls: ['../../scss/auth.component.scss']

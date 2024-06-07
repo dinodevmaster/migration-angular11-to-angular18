@@ -1,17 +1,16 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { Routes } from '@angular/router';
 import { AnimeGuardGuardCanLoad } from './commons/guards/anime-guard-candload.guard';
 import { LoginPageComponent } from './pages/auth/login-page/login-page.component';
 import { RegisterPageComponent } from './pages/auth/register-page/register-page.component';
 
-export const routes: Routes = [
+export const APP_ROUTES: Routes = [
 	{
 		path: 'login',
 		component: LoginPageComponent
 	},
 	{
 		path: 'register',
-		component: RegisterPageComponent
+		loadComponent: () => import('./pages/auth/register-page/register-page.component').then((c) => c.RegisterPageComponent)
 	},
 	{
 		path: 'dashboard',
@@ -24,9 +23,3 @@ export const routes: Routes = [
 		pathMatch: 'prefix'
 	}
 ];
-
-@NgModule({
-	imports: [RouterModule.forRoot(routes)],
-	exports: [RouterModule]
-})
-export class AppRoutingModule {}
